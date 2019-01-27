@@ -518,7 +518,6 @@ public class AutonomFataBaza extends LinearOpMode {
         robot.motorFrontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.motorBackLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.motorBackRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.waitForTick(40);
 
 
         robot.motorFrontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -637,7 +636,6 @@ public class AutonomFataBaza extends LinearOpMode {
         robot.motorFrontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.motorBackLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.motorBackRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.waitForTick(40);
 
 
         robot.motorFrontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -650,7 +648,6 @@ public class AutonomFataBaza extends LinearOpMode {
 
         // resetare gyro la zero
         robot.gyro.resetZAxisIntegrator();
-        robot.waitForTick(40);
 
         // Gyro returneaza 0->359 cand se roteste la stanga si 359->0 la dreapta
 
@@ -738,7 +735,6 @@ public class AutonomFataBaza extends LinearOpMode {
             robot.servoBox.setPosition(servoPosition);
 
             currentCounts = Math.abs(robot.motorRotation.getCurrentPosition());
-            robot.waitForTick(40);
         }
 
         robot.motorRotation.setPower(0);
@@ -762,7 +758,6 @@ public class AutonomFataBaza extends LinearOpMode {
         robot.motorFrontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.motorBackLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.motorBackRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.waitForTick(40);
 
         robot.motorFrontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         robot.motorFrontRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -814,7 +809,6 @@ public class AutonomFataBaza extends LinearOpMode {
     public void lift(Direction direction, double power){
 
         robot.motorLift.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.waitForTick(40);
 
         robot.motorLift.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
