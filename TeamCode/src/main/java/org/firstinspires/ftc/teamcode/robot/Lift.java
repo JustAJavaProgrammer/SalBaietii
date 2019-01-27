@@ -27,6 +27,7 @@ public class Lift {
     {
         robot.motorLift.setPower(0);
         robot.telemetry.addData("Lift:", "Stopped");
+        robot.telemetry.update();
     }
     public void teleLift(Gamepad gamepad){
         boolean y= gamepad.y;
