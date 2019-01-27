@@ -24,19 +24,37 @@ public class Lift {
         RIGHT
     }
 
-    public void teleLift(Gamepad gamepad) {
+    public void teleLift(Gamepad gamepad){
         boolean y= gamepad.y;
-        boolean x= gamepad.x;
+        //retrage liftul
+        boolean x=gamepad.x;
+        //extinde liftul
 
         robot.limitSwitchSus.setMode(DigitalChannel.Mode.INPUT);
         robot.limitSwitchJos.setMode(DigitalChannel.Mode.INPUT);
+           if (x && !robot.limitSwitchSus.getState()) {
+               x = gamepad.x;
+               robot.motorLift.setPower(-0.5);
 
-        if (y)
-            while (robot.limitSwitchSus.getState())
-                robot.motorLift.setPower(LIFT_SPEED);
+           }
+           else if (y && !robot.limitSwitchJos.getState())
+           {
+               y=gamepad.y;
+               robot.motorLift.setPower(0.5);
+           }
+           else if(!x || robot.limitSwitchSus.getState()) {
 
-        if (x)
-            while (robot.limitSwitchJos.getState())
-               robot.motorLift.setPower(-LIFT_SPEED);
+
+               robot.motorLift.setPower(0);
+           }else if(!y || robot.limitSwitchJos.getState())
+           {
+               robot.motorLift.setPower(0);
+           } else
+           {
+               robot.telemetry.addData("Lift:","Bogdan Brox e naspa.");
+           }
+
+
     }
 }
+
