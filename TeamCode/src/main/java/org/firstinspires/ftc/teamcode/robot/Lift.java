@@ -40,3 +40,4 @@ public class Lift {
                robot.motorLift.setPower(-LIFT_SPEED);
     }
 }
+//hatz jonilor
