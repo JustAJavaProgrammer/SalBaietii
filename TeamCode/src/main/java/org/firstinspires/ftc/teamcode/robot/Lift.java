@@ -26,8 +26,8 @@ public class Lift {
     public void stopLift()
     {
         robot.motorLift.setPower(0);
-        robot.telemetry.addData("Lift:", "Stopped");
-        robot.telemetry.update();
+        //robot.telemetry.addData("Lift:", "Stopped");
+        //robot.telemetry.update();
     }
     public void teleLift(Gamepad gamepad){
         boolean y= gamepad.y;
@@ -40,28 +40,28 @@ public class Lift {
            if (x && !robot.limitSwitchSus.getState()) {
                x = gamepad.x;
                robot.motorLift.setPower(-0.5);
-               robot.telemetry.addData("Liftul:","Se ridica");
-               robot.telemetry.update();
+          //     robot.telemetry.addData("Liftul:","Se ridica");
+            //   robot.telemetry.update();
            }
            else if (y && !robot.limitSwitchJos.getState())
            {
                y=gamepad.y;
                robot.motorLift.setPower(0.5);
-               robot.telemetry.addData("Liftul:","Coboara");
-               robot.telemetry.update();
+              // robot.telemetry.addData("Liftul:","Coboara");
+               //robot.telemetry.update();
 
            }
            else if(!x || robot.limitSwitchSus.getState()) {
 
 
                robot.motorLift.setPower(0);
-               robot.telemetry.addData("Liftul:","E oprit");
-               robot.telemetry.update();
+               //robot.telemetry.addData("Liftul:","E oprit");
+               //robot.telemetry.update();
            }else if(!y || robot.limitSwitchJos.getState())
            {
                robot.motorLift.setPower(0);
-               robot.telemetry.addData("Liftul:","E oprit");
-               robot.telemetry.update();
+               //robot.telemetry.addData("Liftul:","E oprit");
+               //robot.telemetry.update();
            } else
            {
                robot.telemetry.addData("Lift:","E probabil stricat");
