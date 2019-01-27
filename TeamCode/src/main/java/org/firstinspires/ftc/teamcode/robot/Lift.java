@@ -23,7 +23,11 @@ public class Lift {
         LEFT,
         RIGHT
     }
-
+    public void stopLift()
+    {
+        robot.motorLift.setPower(0);
+        robot.telemetry.addData("Lift:", "Stopped");
+    }
     public void teleLift(Gamepad gamepad){
         boolean y= gamepad.y;
         //retrage liftul
