@@ -11,7 +11,7 @@ public class Lift {
     private static final double COUNTS_PER_MOTOR_REV    = 1120.0d;       // Modify according to the drive motors
     private static final double LIFT_GEAR_REDUCTION    = 3.0d;         // Speed reduction
     private static final double COUNTS_PER_INCH  = (COUNTS_PER_MOTOR_REV * LIFT_GEAR_REDUCTION / Math.PI);
-    private static final double LIFT_SPEED  = 1.0d;
+    private static final double LIFT_SPEED  = 0.5d;
 
     public Lift() {
 
@@ -39,14 +39,14 @@ public class Lift {
         robot.limitSwitchJos.setMode(DigitalChannel.Mode.INPUT);
            if (x && !robot.limitSwitchSus.getState()) {
                x = gamepad.x;
-               robot.motorLift.setPower(-0.5);
+               robot.motorLift.setPower(-LIFT_SPEED);
           //     robot.telemetry.addData("Liftul:","Se ridica");
             //   robot.telemetry.update();
            }
            else if (y && !robot.limitSwitchJos.getState())
            {
                y=gamepad.y;
-               robot.motorLift.setPower(0.5);
+               robot.motorLift.setPower(LIFT_SPEED);
               // robot.telemetry.addData("Liftul:","Coboara");
                //robot.telemetry.update();
 
