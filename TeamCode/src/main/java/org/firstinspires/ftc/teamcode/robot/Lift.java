@@ -55,7 +55,7 @@ public class Lift {
 
 
                robot.motorLift.setPower(0);
-               robot.telemetry.addData("Liftul:"."E oprit");
+               robot.telemetry.addData("Liftul:","E oprit");
                robot.telemetry.update();
            }else if(!y || robot.limitSwitchJos.getState())
            {
